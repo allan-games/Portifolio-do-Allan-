@@ -1,4 +1,3 @@
-/* BASE */
 html {
   scroll-behavior: smooth;
 }
@@ -6,8 +5,8 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: white;
   background: #0f0f0f;
+  color: white;
 }
 
 /* MENU */
@@ -17,7 +16,6 @@ nav {
   width: 100%;
   background: #000;
   padding: 15px;
-  z-index: 1000;
   border-bottom: 1px solid #222;
 }
 
@@ -53,30 +51,18 @@ nav a:hover {
   border-bottom: 1px solid #222;
 }
 
-/* ALTERNÂNCIA DE FUNDO */
-.dark {
-  background: #000;
-}
-
-/* CONTAINER CENTRAL */
 .container {
   max-width: 700px;
   text-align: center;
 }
 
-/* TEXTO */
-.container p {
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
 /* CARDS */
 .card {
   background: #111;
+  border: 1px solid #222;
   padding: 20px;
   margin: 15px 0;
   border-radius: 10px;
-  border: 1px solid #222;
 }
 
 /* BOTÃO */
@@ -86,9 +72,14 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
   background: #00ccaa;
+}
+
+/* MENSAGEM */
+#msg {
+  margin-top: 10px;
+  color: #00ffcc;
 }
