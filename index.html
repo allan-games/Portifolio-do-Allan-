@@ -1,10 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfólio Allan</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Portfólio Allan</title>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* MENU */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px;
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
+
+/* SEÇÕES */
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  border-bottom: 1px solid #222;
+}
+
+/* CONTEÚDO */
+.container {
+  max-width: 700px;
+  text-align: center;
+}
+
+/* CARDS */
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+/* BOTÃO */
+button {
+  padding: 10px 20px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00ccaa;
+}
+
+/* MENSAGEM */
+#msg {
+  margin-top: 10px;
+  color: #00ffcc;
+}
+</style>
+
 </head>
+
 <body>
 
 <!-- MENU -->
@@ -19,7 +110,7 @@
 </nav>
 
 <!-- INÍCIO -->
-<section id="inicio" class="secao dark">
+<section id="inicio">
   <div class="container">
     <h1>Allan Gabriel</h1>
     <p>Desenvolvedor em formação</p>
@@ -27,7 +118,7 @@
 </section>
 
 <!-- SOBRE -->
-<section id="sobre" class="secao">
+<section id="sobre">
   <div class="container">
     <h2>Sobre mim</h2>
 
@@ -35,53 +126,64 @@
     <p>Cidade: Campina da Lagoa - PR</p>
     <p>Idade: 20 anos</p>
 
-    <p>
-      Sou desenvolvedor em formação, apaixonado por tecnologia e sempre buscando aprender e evoluir na área de programação.
-    </p>
+    <p>Desenvolvedor em formação apaixonado por tecnologia.</p>
   </div>
 </section>
 
 <!-- FORMAÇÕES -->
-<section id="formacoes" class="secao dark">
+<section id="formacoes">
   <div class="container">
     <h2>Formações</h2>
 
-    <p>• Ensino Médio Completo</p>
-    <p>• Curso de Desenvolvimento Web</p>
-    <p>• Curso de Programação em Python</p>
+    <p>Ensino Médio Completo</p>
+    <p>Curso de Desenvolvimento Web</p>
+    <p>Curso de Programação em Python</p>
   </div>
 </section>
 
 <!-- PORTFÓLIO -->
-<section id="portfolio" class="secao">
+<section id="portfolio">
   <div class="container">
     <h2>Projetos</h2>
 
     <div class="card">
-      <h3>Plataforma de colhedeira</h3>
-      <p>Automação da plataforma para reduzir esforço do operador.</p>
+      <h3>Colhedeira automatizada</h3>
+      <p>Automação para reduzir esforço do operador.</p>
     </div>
 
     <div class="card">
       <h3>Painel solar inteligente</h3>
-      <p>Controle automático com acesso pelo celular.</p>
+      <p>Controle automático via celular.</p>
     </div>
-
   </div>
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="secao dark">
+<section id="contato">
   <div class="container">
     <h2>Contato</h2>
 
     <p>Telefone: (44) 98858-4631</p>
-    <p>Email: allan.vitaliano@gmail.com</p>
 
-    <button onclick="mensagem()">Fale comigo</button>
+    <p>Email: <span id="email">allan.vitaliano@gmail.com</span></p>
+
+    <button onclick="copiarEmail()">📋 Copiar Email</button>
+
+    <p id="msg"></p>
   </div>
 </section>
 
-<script src="js/script.js"></script>
+<!-- JS -->
+<script>
+function copiarEmail() {
+  const email = document.getElementById("email").innerText;
+
+  navigator.clipboard.writeText(email).then(() => {
+    document.getElementById("msg").innerText =
+      "Email copiado com sucesso!";
+  });
+}
+</script>
+
 </body>
 </html>
